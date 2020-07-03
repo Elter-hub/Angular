@@ -1,6 +1,6 @@
-<div *ngFor="let post of arrayOfPosts" >
-  {{post.id}}
-  <h2>{{post.title}}</h2>
-  <h3>{{post.body}}</h3>
-  <hr>
+<div *ngFor="let post of userPostsArray">
+     <p>{{post.id}}</p>
+  <p>{{post.userId}}</p>
+  <p>{{post.body}}</p>
+  <p [ngStyle]="{color: 'green'}">{{post.title}}</p>
 </div>

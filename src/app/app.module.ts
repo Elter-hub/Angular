@@ -1,29 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {Input, NgModule} from '@angular/core';
+import { NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { CommentComponent } from './comment/comment.component';
 import { PostComponent } from './post/post.component';
+
+import {UserService} from './services/user.service';
+import {PostService} from './services/post.service';
+import {CommentService} from './services/comment.service';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CommentComponent,
-    PostComponent
+    PostComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService, PostService, CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  arrayOfPosts: any[];
-
-  constructor(private httpClient: HttpClient) {
-    this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/posts')
-      .subscribe(response => this.arrayOfPosts = response);
-  }
 }
