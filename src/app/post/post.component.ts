@@ -1,7 +1,7 @@
-import {Component, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {UserService} from '../services/user.service';
-import {PostService} from '../services/post.service';
 import {Post} from '../models/Post';
+import {Comment1} from '../models/Comment1';
 
 @Component({
   selector: 'app-post',
@@ -9,12 +9,16 @@ import {Post} from '../models/Post';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent   {
-  userPostsArray: Post[];
+  isShowComments = false;
+  postCommentsArray: Comment1[];
 
+  @Input()
+  post: Post;
 
-  constructor(private postService: PostService) {
-    this.postService.getUserPosts(this.userID).subscribe(response => this.userPostsArray = response);
-    console.log(this.userID + ' ot blya');
-    console.log(this.userPostsArray + ' ot blya');
+  constructor(private postService: UserService) {  }
+
+  onShowComments(id: number) {
+    this.isShowComments = !this.isShowComments;
+    this.postService.getPostComments(id).subscribe(value => this.postCommentsArray = value) ;
   }
 }

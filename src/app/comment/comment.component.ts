@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Comment1} from '../models/Comment1';
 
 @Component({
   selector: 'app-comment',
@@ -7,5 +8,6 @@ import {Component, Input} from '@angular/core';
 })
 export class CommentComponent {
 
-
+  @Input()
+  comment: Comment1;
 }

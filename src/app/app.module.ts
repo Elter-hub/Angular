@@ -7,8 +7,6 @@ import { CommentComponent } from './comment/comment.component';
 import { PostComponent } from './post/post.component';
 
 import {UserService} from './services/user.service';
-import {PostService} from './services/post.service';
-import {CommentService} from './services/comment.service';
 import { UserComponent } from './user/user.component';
 
 @NgModule({
@@ -22,7 +20,7 @@ import { UserComponent } from './user/user.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [UserService, PostService, CommentService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
