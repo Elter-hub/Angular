@@ -1,0 +1,16 @@
+<div class="container">
+  <p>Id: number; {{user.id}}</p>
+  <h3 [ngStyle]="{color: 'red'}">{{user.name}}</h3>
+  <p>{{user.username}}</p>
+  <h3 [ngStyle]="{color: 'blue'}">{{user.email}}</h3>
+  <p>{{user.website}}</p>
+  <button
+    class="btn btn-primary"
+    [ngStyle]="{background: 'blue'}"
+    (click)="onShowPosts(user.id)"
+  >Show Posts</button>
+  <div *ngIf="this.isDisplayed">
+  <app-post *ngFor="let post of arrayOfUserPosts" [post]="post" ></app-post>
+  </div>
+  <hr [ngStyle]="{border: '1px solid black'}">
+</div>
