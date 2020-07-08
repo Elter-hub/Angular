@@ -8,16 +8,10 @@ import {Post} from '../models/Post';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent   {
-  isShowComments = false;
-  postCommentsArray: Comment1[];
+  postArray: Post[];
 
-  @Input()
-  post: Post;
-
-  constructor(private postService: UserService) {  }
-
-  onShowComments(id: number) {
-    this.isShowComments = !this.isShowComments;
-    this.postService.getPostComments(id).subscribe(value => this.postCommentsArray = value) ;
+  constructor(private postService: UserService) {
+    this.postService.getAllPosts().subscribe(value => this.postArray = value) ;
   }
+
 }

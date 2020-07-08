@@ -1,10 +1,11 @@
- <p>User id: {{post.userId}} -- Post id:{{post.id}} -- {{post.body}}
- <h3 [ngStyle]="{color: 'green'}">Post title: {{post.title}}</h3>
- <button
-   class="btn btn-primary"
-   [ngStyle]="{background: 'green'}"
-   (click)="onShowComments(post.id)"
- >Show Comments</button>
- <div *ngIf="this.isShowComments">
-   <app-comment *ngFor="let comment of postCommentsArray" [comment]="comment" ></app-comment>
- </div>
+<div class="container bg-dark">
+    <div class="card d-inline-block w-25 " style="height: 200px; overflow: scroll" *ngFor="let post of postArray">
+    <div class="card-header">
+      {{post.name}}
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">UserId: {{post.postId}}--->PostId:{{post.id}}</h4>
+      <p class="card-text">{{post.body}}</p>
+    </div>
+  </div>
+</div>

@@ -1,25 +1,29 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {User} from '../models/User';
 import {UserService} from '../services/user.service';
-import {Post} from '../models/Post';
+import {DataService} from '../services/data.service';
+import {UserPostsService} from '../services/userPosts.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent  {
-  arrayOfUserPosts: Post[];
-  isDisplayed = false;
-  @Input()
-  user: User;
+export class UserComponent {
+  usersArray: User[];
+  userId: number
+  postId: number
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private dataService: DataService,
+              private postService: UserPostsService) {
+    this.userService.getAllUsers().subscribe(value => this.usersArray = value) ;
+    this.dataService.currentId.subscribe(number => this.userId = number );
+    this.dataService.currentId.subscribe(number => this.postId = number );
   }
 
-  onShowPosts(userId: number) {
-    this.isDisplayed = !this.isDisplayed;
-    this.userService.getUserPosts(userId).subscribe(value => this.arrayOfUserPosts = value) ;
+  showDetails(id: number) {
+    this.dataService.changeUserId(id);
   }
 
   showUserPosts(id: number) {

@@ -1,16 +1,13 @@
-<div class="container">
-  <p>Id: number; {{user.id}}</p>
-  <h3 [ngStyle]="{color: 'red'}">{{user.name}}</h3>
-  <p>{{user.username}}</p>
-  <h3 [ngStyle]="{color: 'blue'}">{{user.email}}</h3>
-  <p>{{user.website}}</p>
-  <button
-    class="btn btn-primary"
-    [ngStyle]="{background: 'blue'}"
-    (click)="onShowPosts(user.id)"
-  >Show Posts</button>
-  <div *ngIf="this.isDisplayed">
-  <app-post *ngFor="let post of arrayOfUserPosts" [post]="post" ></app-post>
+<div class="container bg-dark">
+  <div class="card d-inline-block bg-secondary " *ngFor="let user of usersArray"  >
+    <div class="card-body " >
+      <h4 class="card-title">{{user.name}}</h4>
+      <h6 class="card-subtitle mb-2 text-muted" >{{user.username}}</h6>
+      <p class="card-text">
+        {{user.email}}
+      </p>
+      <a routerLink="{{user.id}}" (click)="showDetails(user.id)" >Show details</a><br>
+      <a routerLink="/posts/{{user.id}}" (click)="showUserPosts(user.id)" >Show user posts</a>
+    </div>
   </div>
-  <hr [ngStyle]="{border: '1px solid black'}">
 </div>
