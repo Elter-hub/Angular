@@ -21,4 +21,8 @@ export class UserComponent  {
     this.isDisplayed = !this.isDisplayed;
     this.userService.getUserPosts(userId).subscribe(value => this.arrayOfUserPosts = value) ;
   }
+
+  showUserPosts(id: number) {
+    this.postService.changeUserId(id);
+  }
 }

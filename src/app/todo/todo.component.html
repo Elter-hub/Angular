@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card d-inline-block w-25" *ngFor="let todo of todosArray" style="height: 150px; overflow: hidden"  >
-    <div class="card-header" [ngStyle]="{background: todo.completed ? 'lightgreen' : 'mistyrose'}">
+    <div class="card-header" [ngStyle]="{background: todo.completed ? 'lightgreen' : 'lightcoral'}">
       {{todo.title | titlecase | slice:0:20}} <br>
       UserId: {{todo.userId}} --> todoId: {{todo.id}}
     </div>

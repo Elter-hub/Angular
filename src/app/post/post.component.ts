@@ -1,7 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {UserService} from '../services/user.service';
 import {Post} from '../models/Post';
-import {Comment1} from '../models/Comment1';
 
 @Component({
   selector: 'app-post',

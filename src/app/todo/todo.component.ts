@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Comment1} from '../models/Comment1';
+import { Component } from '@angular/core';
 import {UserService} from '../services/user.service';
 import {Todos} from '../models/Todos';
 
@@ -9,7 +8,6 @@ import {Todos} from '../models/Todos';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent {
-
   todosArray: Todos[];
 
   constructor(private commentService: UserService) {

@@ -14,6 +14,8 @@ import {AppRoutingModule} from './routing.module';
 import {TodoComponent} from './todo/todo.component';
 import {DataService} from './services/data.service';
 import {SingleUserComponent} from './single-user/single-user.component';
+import {UserPostsComponent} from './user-posts/user-posts.component';
+import {UserPostsService} from './services/userPosts.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {SingleUserComponent} from './single-user/single-user.component';
     UserComponent,
     HomeComponent,
     TodoComponent,
-    SingleUserComponent
+    SingleUserComponent,
+    UserPostsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import {SingleUserComponent} from './single-user/single-user.component';
     AppRoutingModule,
 
   ],
-  providers: [UserService, DataService],
+  providers: [UserService, DataService, UserPostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
