@@ -1,0 +1,12 @@
+<div class="container bg-dark">
+  <div class="card d-inline-block bg-secondary " *ngFor="let user of usersArray" >
+    <div class="card-body " >
+      <h4 class="card-title">{{user.name}}</h4>
+      <h6 class="card-subtitle mb-2 text-muted" >{{user.username}}</h6>
+      <p class="card-text">
+        {{user.email}}
+      </p>
+      <a routerLink="{{user.id}}">Show details</a>
+    </div>
+  </div>
+</div>

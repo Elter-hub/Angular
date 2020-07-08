@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from './services/user.service';
 import {User} from './models/User';
+import {DataService} from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,12 @@ import {User} from './models/User';
 })
 export class AppComponent {
   arrayOfUsers: User[];
+  user: User;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService             ) {
+
     this.userService.getAllUsers().subscribe(response => this.arrayOfUsers = response);
   }
+
+
 }

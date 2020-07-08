@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="card d-inline-block w-25" *ngFor="let todo of todosArray" style="height: 150px; overflow: hidden"  >
+    <div class="card-header" [ngStyle]="{background: todo.completed ? 'lightgreen' : 'mistyrose'}">
+      {{todo.title | titlecase | slice:0:20}} <br>
+      UserId: {{todo.userId}} --> todoId: {{todo.id}}
+    </div>
+    <div class="card-body">
+      <h4 class="card-title"></h4>
+      <p class="card-text">{{todo.completed}}</p>
+    </div>
+  </div>
+</div>

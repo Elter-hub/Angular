@@ -1,1 +1,18 @@
-<app-user *ngFor="let user of arrayOfUsers" [user]="user"></app-user>
+<ul class="nav nav-tabs">
+  <li class="nav-item" routerLinkActive="active" >
+    <a class="nav-link " routerLink="home">Home</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" routerLink="users">Users</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" routerLink="posts">Posts</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" routerLink="comments">Comments</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" routerLink="todos">Todos</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
