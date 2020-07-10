@@ -9,16 +9,15 @@ export interface User {
     city?: string,
     zipcode?: string,
     geo?: {
-      lat: string,
-      lng: string
-    },
-  }
-  phone?: string,
+      lat?: string,
+      lng?: string
+    };
+  };
+  phone?: string;
   website?: string;
   company?: {
     name?: string,
     catchPhrase?: string,
     bs?: string
-  }
-
+  };
 }

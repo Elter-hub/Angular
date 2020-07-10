@@ -3,39 +3,39 @@ import { NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
-import { CommentComponent } from './comment/comment.component';
-import { PostComponent } from './post/post.component';
 
-import {UserService} from './services/user.service';
-import { UserComponent } from './user/user.component';
-import {HomeComponent} from './home/home.component';
 import {RouterModule} from '@angular/router';
-import {AppRoutingModule} from './routing.module';
-import {TodoComponent} from './todo/todo.component';
-import {DataService} from './services/data.service';
-import {SingleUserComponent} from './single-user/single-user.component';
-import {UserPostsComponent} from './user-posts/user-posts.component';
-import {UserPostsService} from './services/userPosts.service';
+import { HomeComponent } from './home/home.component';
+import { CommentsComponent } from './comments/comments.component';
+import { UsersComponent } from './users/users.component';
+import { PostsComponent } from './posts/posts.component';
+import {GetDataService} from './users/services/getData.service';
+import { SingleUserComponent } from './single-user/single-user.component';
+import {UsersResolverService} from './resolvers/users-resolver.service';
+import {PostResolverService} from './resolvers/posts-resolver.service';
+import {SingleUserResolverService} from './resolvers/single-user-resolver.service';
+import {UserCheckService} from './users/services/userChecker.service';
+import {RoutingModule} from './routing/routing.module';
+import { AllPostsComponent } from './all-posts/all-posts.component';
+import {AllPostResolverService} from './resolvers/allPostsResolver.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentComponent,
-    PostComponent,
-    UserComponent,
     HomeComponent,
-    TodoComponent,
+    CommentsComponent,
+    UsersComponent,
+    PostsComponent,
     SingleUserComponent,
-    UserPostsComponent
+    AllPostsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule,
-    AppRoutingModule,
-
+    RoutingModule
   ],
-  providers: [UserService, DataService, UserPostsService],
+  providers: [GetDataService, UsersResolverService, SingleUserResolverService,
+              PostResolverService, UserCheckService, AllPostResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
