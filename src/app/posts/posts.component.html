@@ -1,0 +1,22 @@
+<div class="container bg-secondary">
+  <div class="card d-inline-block w-50 bg-primary" style="height: 300px; overflow: auto " *ngFor="let post of userPosts">
+    <div >
+      <div class="card-header text-white" *ngIf="!isShow">
+        {{post.title | titlecase | slice:0:10}}
+        <a style="cursor: pointer; color: aqua" (click)="showAll()" >...</a>
+      </div>
+      <div class="card-header text-white" *ngIf="isShow">
+        {{post.title | titlecase }}
+        <a style="cursor: pointer; color: #0b46db" (click)="showAll()">hide</a>
+      </div>
+      <div class="card-body bg-info">
+        <h4 class="card-title">UserId: {{post.userId}} <br> PostId:{{post.id}}</h4>
+        <p class="card-text">{{post.body}}</p>
+      </div>
+      <div class="card-footer text-white">
+        <a style="cursor: pointer" (click)="showComments(post)">Show all Comments</a>
+      </div>
+    </div>
+  </div>
+</div>
+

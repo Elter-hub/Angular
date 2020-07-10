@@ -1,22 +1,23 @@
-import {Injectable} from '@angular/core';
+import {Injectable } from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
 import {GetDataService} from '../services/getData.service';
-import {Post} from '../models/post';
+import { Commentt } from '../models/commentt';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostResolverService implements Resolve<Post[]>{
+export class PostCommentsResolverService implements Resolve<Commentt[]>{
   userId: number;
 
   constructor(private activatedRoute: ActivatedRoute,
               private getDataService: GetDataService){}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Post[]> | Promise<Post[]> | Post[] {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Commentt[]> | Promise<Commentt[]> | Commentt[] {
     this.activatedRoute.data.subscribe(value => {
-      this.userId = history.state.user.id;
+      this.userId = history.state.post.id;
+
     });
-    return this.getDataService.getUserPosts(this.userId);
+    return this.getDataService.getPostComments(this.userId);
   }
 }

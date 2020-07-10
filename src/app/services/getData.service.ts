@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {User} from '../../models/User';
-import {Post} from '../../models/post';
+import {User} from '../models/User';
+import {Post} from '../models/post';
+import {Commentt} from '../models/commentt';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -27,7 +28,13 @@ export class GetDataService {
     return this.httpClient.get<Post[]>(`https://jsonplaceholder.typicode.com/posts`);
   }
 
-  getPostComments(postId: number): Observable<Comment[]> {
-    return this.httpClient.get<Comment[]>(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
+  getPostComments(postId: number): Observable<Commentt[]> {
+    return this.httpClient.get<Commentt[]>(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
   }
+
+  getAllComments(): Observable<Commentt[]> {
+    return this.httpClient.get<Commentt[]>(`https://jsonplaceholder.typicode.com/comments`);
+  }
+
+
 }

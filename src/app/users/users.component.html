@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row bg-dark " >
+    <div class="col-md-6 " *ngFor="let user of usersArray">
+      <div class="card d-inline-block bg-secondary w-100 text-center m-2"   >
+        <div class="card-body " >
+          <h4 class="card-title">{{user.name}}</h4>
+          <h6 class="card-subtitle text-dark" >{{user.username}}</h6>
+          <p class="card-text">
+            {{user.email}}
+          </p>
+          <a (click)="showDetails(user)" style="cursor: pointer; color: lightblue">Show details</a><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

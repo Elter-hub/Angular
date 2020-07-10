@@ -4,11 +4,14 @@ import { RouterModule, Routes} from '@angular/router';
 import {UsersComponent} from '../users/users.component';
 import {UsersResolverService} from '../resolvers/users-resolver.service';
 import {SingleUserComponent} from '../single-user/single-user.component';
-import {UserCheckService} from '../users/services/userChecker.service';
+import {UserCheckService} from '../services/userChecker.service';
 import {SingleUserResolverService} from '../resolvers/single-user-resolver.service';
 import {PostsComponent} from '../posts/posts.component';
 import {PostResolverService} from '../resolvers/posts-resolver.service';
 import {AllPostResolverService} from '../resolvers/allPostsResolver.service';
+import {CommentsComponent} from '../comments/comments.component';
+import {AllCommentsResolverService} from '../resolvers/allCommentsResolver.service';
+import {PostCommentsResolverService} from '../resolvers/postCommentsResolver.service';
 
 const appRoutes: Routes = [
         {path: 'users', component: UsersComponent, resolve: {users: UsersResolverService} },
@@ -17,7 +20,10 @@ const appRoutes: Routes = [
             {path: 'posts', component: PostsComponent, resolve: {posts: PostResolverService}},
           ]},
         {path: 'allPosts', component: PostsComponent, resolve: {posts: AllPostResolverService} },
-        {path: '**', redirectTo: 'users'}]
+        {path: 'post/:id', component: CommentsComponent, resolve: {comments: PostCommentsResolverService} },
+        {path: 'allComments', component: CommentsComponent, resolve: {comments: AllCommentsResolverService} },
+        {path: '**', redirectTo: 'users'}
+  ]
 
 @NgModule({
   declarations: [],

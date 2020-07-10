@@ -1,0 +1,25 @@
+<div class="container bg-light ">
+  <div class="card d-inline-block bg-info col-11 " >
+    <div class="card-body text-center" >
+      <h4 class="card-title">{{singleUser.name}}</h4>
+      <h6 class="card-subtitle mb-2 text-dark" >{{singleUser.username}}</h6>
+      <p class="card-text">
+        Email: {{singleUser.email}} {{singleUser.address.street}}<br>
+        Company: {{singleUser.company.name}}
+        bs: {{singleUser.company.bs}}<br>
+        catchPhrase: {{singleUser.company.catchPhrase}}<br>
+        City: {{singleUser.address.city}}<br>
+        Phone: {{singleUser.phone}}<br>
+        Suite: {{singleUser.address.suite}}<br>
+        Website: {{singleUser.website}}<br>
+        Zipcode: {{singleUser.address.zipcode}}<br>
+      </p>
+      <a style="cursor: pointer; color: #083cd7"
+        (click)="showUserPosts(singleUser)"
+      >{{isShowUserPosts ? 'Hide posts' : 'Show posts'}}</a>
+
+      <router-outlet *ngIf="isShowUserPosts"></router-outlet>
+
+    </div>
+  </div>
+</div>
