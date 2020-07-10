@@ -15,8 +15,7 @@ export class PostCommentsResolverService implements Resolve<Commentt[]>{
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Commentt[]> | Promise<Commentt[]> | Commentt[] {
     this.activatedRoute.data.subscribe(value => {
-      this.userId = history.state.post.id;
-
+      this.userId = history.state.user.id;
     });
     return this.getDataService.getPostComments(this.userId);
   }
