@@ -4,6 +4,7 @@ import {Post} from '../models/post';
 import {Commentt} from '../models/commentt';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Todo} from '../models/todo';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,12 @@ export class GetDataService {
   getAllComments(): Observable<Commentt[]> {
     return this.httpClient.get<Commentt[]>(`https://jsonplaceholder.typicode.com/comments`);
   }
+
+  getAllTodos(): Observable<Todo[]> {
+    return this.httpClient.get<Todo[]>(`https://jsonplaceholder.typicode.com/todos`);
+  }
+
+
 
 
 }

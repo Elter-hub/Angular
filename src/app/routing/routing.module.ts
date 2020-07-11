@@ -13,6 +13,7 @@ import {CommentsComponent} from '../comments/comments.component';
 import {AllCommentsResolverService} from '../resolvers/allCommentsResolver.service';
 import {PostCommentsResolverService} from '../resolvers/postCommentsResolver.service';
 import {HomeComponent} from '../home/home.component';
+import {FirstComponentComponent} from '../first-component/first-component.component';
 
 const appRoutes: Routes = [
         {path: 'users', component: UsersComponent, resolve: {users: UsersResolverService} },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
         {path: 'allPosts', component: PostsComponent, resolve: {posts: AllPostResolverService} },
         {path: 'post/:id', component: CommentsComponent, resolve: {comments: PostCommentsResolverService} },
         {path: 'allComments', component: CommentsComponent, resolve: {comments: AllCommentsResolverService} },
+        {path: 'material', component: FirstComponentComponent },
         {path: '**', redirectTo: 'users'}
   ]
 

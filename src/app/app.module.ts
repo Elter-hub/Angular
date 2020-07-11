@@ -27,6 +27,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { UserIdService} from './services/userId.service';
+import { FirstComponentComponent } from './first-component/first-component.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { UserIdService} from './services/userId.service';
     PostsComponent,
     SingleUserComponent,
     HomeComponent,
+    FirstComponentComponent,
 
   ],
   imports: [
@@ -49,7 +52,8 @@ import { UserIdService} from './services/userId.service';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    DragDropModule
   ],
   providers: [GetDataService, UsersResolverService, SingleUserResolverService, PostResolverService, UserIdService,
     UserCheckService, AllPostResolverService, AllCommentsResolverService, PostCommentsResolverService],
