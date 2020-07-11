@@ -3,6 +3,7 @@ import {ActivatedRoute, ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} fr
 import {Observable} from 'rxjs';
 import {GetDataService} from '../services/getData.service';
 import {Post} from '../models/post';
+import {UserIdService} from '../services/userId.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,11 @@ import {Post} from '../models/post';
 export class PostResolverService implements Resolve<Post[]>{
   userId: number;
 
-  constructor(private activatedRoute: ActivatedRoute,
+  constructor(private userIdentificator: UserIdService,
               private getDataService: GetDataService){}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Post[]> | Promise<Post[]> | Post[] {
-    this.activatedRoute.data.subscribe(value => {
-      this.userId = history.state.user.id;
-    });
-    return this.getDataService.getUserPosts(this.userId);
+        this.userIdentificator.currentId.subscribe(uId => this.userId = uId);
+        return this.getDataService.getUserPosts(this.userId);
   }
 }

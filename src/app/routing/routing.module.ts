@@ -12,6 +12,7 @@ import {AllPostResolverService} from '../resolvers/allPostsResolver.service';
 import {CommentsComponent} from '../comments/comments.component';
 import {AllCommentsResolverService} from '../resolvers/allCommentsResolver.service';
 import {PostCommentsResolverService} from '../resolvers/postCommentsResolver.service';
+import {HomeComponent} from '../home/home.component';
 
 const appRoutes: Routes = [
         {path: 'users', component: UsersComponent, resolve: {users: UsersResolverService} },

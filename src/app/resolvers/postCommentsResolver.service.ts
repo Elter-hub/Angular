@@ -3,6 +3,7 @@ import {ActivatedRoute, ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} fr
 import {Observable} from 'rxjs';
 import {GetDataService} from '../services/getData.service';
 import { Commentt } from '../models/commentt';
+import {UserIdService} from '../services/userId.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,11 @@ import { Commentt } from '../models/commentt';
 export class PostCommentsResolverService implements Resolve<Commentt[]>{
   userId: number;
 
-  constructor(private activatedRoute: ActivatedRoute,
+  constructor( private userIdentificator: UserIdService,
               private getDataService: GetDataService){}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Commentt[]> | Promise<Commentt[]> | Commentt[] {
-    this.activatedRoute.data.subscribe(value => {
-      this.userId = history.state.user.id;
-    });
+    this.userIdentificator.currentId.subscribe(uId => this.userId = uId);
     return this.getDataService.getPostComments(this.userId);
   }
 }
