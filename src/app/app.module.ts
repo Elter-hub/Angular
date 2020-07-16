@@ -27,6 +27,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import {UsersResolverService} from './services/resolvers/usersResolver.service';
 import {ManipulatingUsersArrayService} from './services/manipulatingUsersArray.service';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {ManipulatingUsersArrayService} from './services/manipulatingUsersArray.s
     CommentsFormComponent,
     PostsFormComponent,
     UserFormComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

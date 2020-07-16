@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Subject} from 'rxjs';
+import {BehaviorSubject, } from 'rxjs';
 import {User} from '../models/user';
-import {A} from '@angular/cdk/keycodes';
 import {GetDataService} from './get-data.service';
 
 @Injectable({
@@ -10,12 +9,12 @@ import {GetDataService} from './get-data.service';
 export class ManipulatingUsersArrayService {
   arrayToFilter: User[];
   filtrated: User[];
+  newArray: User[];
 
   private allUsers = new BehaviorSubject<User[]>([]);
   currentUsers = this.allUsers.asObservable();
 
   constructor(private  getDataService: GetDataService) {
-
    this.getDataService.getAllUsers().subscribe(value => this.arrayToFilter = value)
   }
 
@@ -23,7 +22,13 @@ export class ManipulatingUsersArrayService {
     this.allUsers.next(array);
   }
 
-
+  changeOneUser(user: User){
+    this.currentUsers.subscribe(usersArray => {
+     usersArray[user.id-1] = user;
+     this.newArray = usersArray;
+    })
+    this.allUsers.next(this.newArray)
+  }
 
   filterByEmail(email: string) {
     this.currentUsers.subscribe(userArray => {
