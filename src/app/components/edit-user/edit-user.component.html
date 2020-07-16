@@ -1,0 +1,78 @@
+
+<form class="example-form" #form="ngForm" (ngSubmit)="editUser(form.value)">
+  <mat-grid-list cols="2" rowHeight="5:1">
+    <mat-grid-tile>
+      <mat-form-field class="example-full-width" >
+        <mat-label>Id</mat-label>
+        <input matInput
+               [(ngModel)]="user.id"
+               #id
+               name="id"
+        >
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field class="example-full-width" >
+        <mat-label>name</mat-label>
+        <input matInput
+               [(ngModel)]="user.name"
+               #name
+               name="name"
+               required
+        >
+      </mat-form-field>
+      </mat-grid-tile>
+
+
+    <mat-grid-tile>
+      <mat-form-field class="example-full-width" >
+        <mat-label>username</mat-label>
+        <input matInput
+               [(ngModel)]="user.username"
+               #username
+               name="username"
+               required
+        >
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field class="example-full-width" >
+        <mat-label>email</mat-label>
+        <input matInput
+               [(ngModel)]="user.email"
+               #email
+               name="email"
+               required
+               email=""
+        >
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field class="example-full-width" >
+        <mat-label>website</mat-label>
+        <input matInput
+               [(ngModel)]="user.website"
+               #website
+               name="website"
+        >
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-form-field class="example-full-width" >
+        <mat-label>phone</mat-label>
+        <input matInput
+               [(ngModel)]="user.phone"
+               #phone
+               name="phone"
+        >
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div style="text-align: center">
+    <button mat-raised-button color="primary">Save changes</button>
+  </div>
+</form>

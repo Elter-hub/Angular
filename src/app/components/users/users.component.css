@@ -1,0 +1,7 @@
+.mat-card:hover {
+  background: #7b1fa2;
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 25px;
+}
