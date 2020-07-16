@@ -26,6 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import {UsersResolverService} from './services/resolvers/usersResolver.service';
+import {ManipulatingUsersArrayService} from './services/manipulatingUsersArray.service';
 
 @NgModule({
   declarations: [
@@ -57,8 +58,9 @@ import {UsersResolverService} from './services/resolvers/usersResolver.service';
     MatSelectModule,
     FormsModule,
 
+
   ],
-  providers: [GetDataService, UsersResolverService],
+  providers: [GetDataService, UsersResolverService, ManipulatingUsersArrayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

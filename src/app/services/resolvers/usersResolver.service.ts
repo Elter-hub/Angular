@@ -8,21 +8,11 @@ import {User} from '../../models/user';
   providedIn: 'root'
 })
 export class UsersResolverService implements Resolve<User[]>{
-  users: User[];
 
-
-  allUsers: BehaviorSubject<User[]> = new BehaviorSubject<User[]>(this.users);
-  currentAllUsers = this.allUsers.asObservable();
-
-  constructor(private getDataService: GetDataService){
-    this.getDataService.getAllUsers().subscribe(value => this.users = value)
-  }
-
-  removesUser(userId: number) {
-    this.users.splice(userId, 1)
+  constructor(private getDataService: GetDataService) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User[]> | Promise<User[]> | User[] {
-    return this.users;
+    return this.getDataService.getAllUsers();
   }
 }
