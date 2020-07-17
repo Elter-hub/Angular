@@ -1,0 +1,12 @@
+<mat-card *ngFor="let post of userPosts">
+  <mat-card-title> {{post.title}}</mat-card-title>
+  <mat-card-subtitle>👶User {{post.userId}}👶⏩⏩⏩⏩⏩{{post.id}}📜📜</mat-card-subtitle>
+  <mat-card-content> {{post.body}}</mat-card-content>
+  <button
+    mat-stroked-button
+    color="accent"
+  >Show comments</button>
+  <mat-card-footer *ngIf="isShow">
+    <router-outlet></router-outlet>
+  </mat-card-footer>
+</mat-card>

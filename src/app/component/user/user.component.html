@@ -1,0 +1,32 @@
+<router-outlet></router-outlet>
+
+<div class="grid-container">
+  <div style="text-align: center">
+    <h1 class="mat-h1">🛸🛸🛸👾👾👽👾👾🛸🛸🛸</h1>
+  </div>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let user of users; let index = index" style="text-align: center" >
+      <mat-card class="dashboard-user" >
+        <mat-card-header >
+          <mat-card-title  >
+            {{user.name}} {{user.id}}
+            <mat-card-subtitle>{{user.username}}</mat-card-subtitle>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-user-content">
+          <div>
+            Email: {{user.email}} {{user.address.street}}<br>
+            Company: {{user.company.name}}
+            bs: {{user.company.bs}}<br>
+            catchPhrase: {{user.company.catchPhrase}}<br>
+            City: {{user.address.city}}<br>
+            Phone: {{user.phone}}<br>
+            Suite: {{user.address.suite}}<br>
+            Website: {{user.website}}<br>
+            Zipcode: {{user.address.zipcode}}<br>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

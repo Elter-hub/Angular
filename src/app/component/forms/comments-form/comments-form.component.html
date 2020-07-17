@@ -1,0 +1,25 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" color="accent">
+    <mat-label>Search by 🔎📖</mat-label>
+    <input matInput
+           ngModel
+           name="searchField"
+           #searchField
+           (input)=filterById(+searchField.value)>
+    <mat-hint>Enter number 🔢 </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field color="primary">
+    <mat-label >Choose items 👉👉👉</mat-label>
+    <mat-select >
+      <mat-option
+        *ngFor="let option of options" [value]="option"
+        (click)="onSelect(option)"
+      >
+        {{option}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+<router-outlet></router-outlet>
+

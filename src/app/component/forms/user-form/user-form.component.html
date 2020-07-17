@@ -1,0 +1,24 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" >
+    <mat-label>Search by 📧 or 🕸</mat-label>
+    <input matInput
+           ngModel
+           name="searchField"
+           #searchField
+           (input)=filterByEmail(searchField.value)>
+    <mat-hint>net, org</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field color="primary">
+    <mat-label >Choose items 👉👉👉</mat-label>
+    <mat-select >
+      <mat-option
+        *ngFor="let option of options" [value]="option"
+        (click)="onSelect(option)"
+      >
+        {{option}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+<router-outlet></router-outlet>
