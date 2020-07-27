@@ -1,0 +1,17 @@
+<mat-dialog-content [formGroup]="myForm">
+  <mat-grid-list cols="2" rowHeight="3:1">
+    <mat-grid-tile *ngFor="let option of editableFields">
+        <mat-form-field appearance="outline">
+          <mat-label>{{option}}</mat-label>
+          <input matInput formControlName="{{option}}" >
+
+        </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onSave()">Ok</button>
+    <button mat-button (click)="onSave()">Cancel</button>
+  </div>
+</mat-dialog-content>
+
+

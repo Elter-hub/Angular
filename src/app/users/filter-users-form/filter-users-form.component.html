@@ -1,0 +1,16 @@
+<form class="example-form">
+  <mat-form-field >
+    <mat-label>choose filter 👉</mat-label>
+    <mat-select >
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label >🔎</mat-label>
+    <input matInput #search (input)="find(search.value)">
+    <mat-icon matSuffix>sentiment_satisfied_alt</mat-icon>
+
+  </mat-form-field>
+</form>

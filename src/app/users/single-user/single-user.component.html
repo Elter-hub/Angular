@@ -1,0 +1,45 @@
+<div class="grid-container">
+      <mat-card class="dashboard-singleUser" >
+        <mat-card-header >
+          <mat-card-title  >
+            {{singleUser.name}} {{singleUser.id}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon color="accent">build</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="after">
+              <button mat-icon-button color="accent" (click)="openDialog()">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="removeUser(singleUser.id)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </mat-menu>
+            <mat-card-subtitle>{{singleUser.username}}</mat-card-subtitle>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-content">
+
+          <div>
+            Email: {{singleUser.email}} <br>
+            Street: {{singleUser.address.street}}<br>
+            Phone: {{singleUser.phone}}<br>
+            Company: {{singleUser.company.name}}
+            bs: {{singleUser.company.bs}}<br>
+            catchPhrase: {{singleUser.company.catchPhrase}}<br>
+            City: {{singleUser.address.city}}<br>
+            Suite: {{singleUser.address.suite}}<br>
+            Zipcode: {{singleUser.address.zipcode}}<br>
+            Website: {{singleUser.website}}<br>
+          </div>
+
+        </mat-card-content>
+        <div>
+          <button
+            mat-raised-button
+            color="accent"
+            mat-ripple
+            routerLink="[{{singleUser.id}}, 'posts']"
+          >Show Posts</button>
+        </div>
+      </mat-card>
+</div>
