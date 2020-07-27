@@ -19,9 +19,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRippleModule} from '@angular/material/core';
 import { FilterUsersFormComponent } from './filter-users-form/filter-users-form.component';
 
-
-
-
 @NgModule({
   declarations: [UsersComponent, SingleUserComponent, UserFormComponent, FilterUsersFormComponent],
   exports: [

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Post} from '../model/post';
 import {animate, keyframes, query, stagger, style, transition, trigger} from '@angular/animations';
 
@@ -9,23 +9,22 @@ import {animate, keyframes, query, stagger, style, transition, trigger} from '@a
   animations: [
     trigger('listAnimation', [
       transition('* => *', [
-        query(':self', style({opacity: 0}), {optional: true}),
         query(':self', stagger('300ms', [
-          animate('0.8s ease-in', keyframes([
-            style({opacity: 0, transform: 'translateX(-25%)', offset: 0}),
-            style({opacity: 0.5, transform: 'translateX(10%)', offset: 0.5}),
-            style({opacity: 1, transform: 'translateX(0px)', offset: 1})
+          animate('0.5s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateY(-25%)', offset: 0}),
+            style({opacity: 0.5, transform: 'translateY(10%)', offset: 0.5}),
+            style({opacity: 1, transform: 'translateY(0px)', offset: 1})
           ]))
         ]))
       ])
     ])
   ]
 })
-export class OnePostComponent implements OnInit {
+export class OnePostComponent {
   @Input() onePost: Post;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  color1: number = Math.round(Math.random() * 255);
+  color2: number = Math.round(Math.random() * 255);
+  color3: number = Math.round(Math.random() * 255);
+  colorize = 'rgba(' + this.color1 + ', ' + this.color2 + ', ' + this.color3 + ', ' + 0.7 + ')';
 
 }

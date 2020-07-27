@@ -1,4 +1,5 @@
-<div class="container bg-dark" [@listAnimation]="onePost" >
+<div [@listAnimation]="onePost"
+     [ngStyle]="{'backgroundColor': colorize}">
   <mat-card-content>
     <mat-card-title >📚 {{onePost.title}}</mat-card-title>
     <br>

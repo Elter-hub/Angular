@@ -7,7 +7,8 @@ import {UserFormComponent} from '../user-form/user-form.component';
 @Component({
   selector: 'app-single-user',
   templateUrl: './single-user.component.html',
-  styleUrls: ['./single-user.component.css']
+  styleUrls: ['./single-user.component.css'],
+
 })
 export class SingleUserComponent  {
   @Input() singleUser: User;
@@ -17,8 +18,7 @@ export class SingleUserComponent  {
   removeUser(id: number): void {
     this.exchangeDataService.removeUser(id);
   }
-
-  //Pop up window ⏬⏬⏬⏬⏬⏬⏬⏬⏬
+  // Pop up window ⏬⏬⏬⏬⏬⏬⏬⏬⏬
 
   openDialog(): void {
     const dialogConfig = new MatDialogConfig();

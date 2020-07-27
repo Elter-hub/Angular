@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {User} from '../model/user';
 import {ExchangeDataService} from '../services/exchange-data.service';
@@ -6,7 +6,8 @@ import {ExchangeDataService} from '../services/exchange-data.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
+
 })
 export class UsersComponent  {
   allUsers: User[];

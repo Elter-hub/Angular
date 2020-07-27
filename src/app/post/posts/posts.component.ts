@@ -5,6 +5,7 @@ import {FixedSizeVirtualScrollStrategy, VIRTUAL_SCROLL_STRATEGY} from '@angular/
 
 export class CustomVirtualScrollStrategy extends FixedSizeVirtualScrollStrategy {
   constructor() {
+    // This 👇👇👇 probably do nothing
     super(100, 50, 200);
   }
 }

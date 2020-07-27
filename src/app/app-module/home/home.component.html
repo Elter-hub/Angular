@@ -3,12 +3,12 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Menu📓</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item  routerLink="">Home</a>
-      <a mat-list-item  routerLink="users">Users</a>
-      <a mat-list-item routerLink="posts">Posts</a>
-      <a mat-list-item routerLink="">Comments</a>
+      <a mat-list-item routerLink="">🏠 Home</a>
+      <a mat-list-item routerLink="users">👯 Users</a>
+      <a mat-list-item routerLink="posts">📓 Posts</a>
+      <a mat-list-item routerLink="comments">🗒 Comments</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -28,3 +28,4 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+
