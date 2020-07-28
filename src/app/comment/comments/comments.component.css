@@ -1,0 +1,17 @@
+div {
+  justify-content: center!important;
+  text-align: center;
+}
+
+cdk-virtual-scroll-viewport {
+  margin-top: 5vh;
+  height: 78vh;
+}
+
+
+
+
+
+
+
+

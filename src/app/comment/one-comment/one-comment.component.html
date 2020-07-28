@@ -1,0 +1,9 @@
+<div [ngStyle]="{backgroundColor: colorize}" [@commentAnimation]="oneComment" >
+  <mat-card-content>
+    <mat-card-title >📧 {{oneComment.email}}</mat-card-title>
+    <br>
+    <mat-card-subtitle >UserId: 👨 {{oneComment.postId}}--->PostId:{{oneComment.id}} 📜</mat-card-subtitle>
+  </mat-card-content>
+  <mat-card-footer >{{oneComment.body}}</mat-card-footer>
+</div>
+
