@@ -8,14 +8,17 @@ import {CommonModule} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
-  declarations: [PostsComponent, OnePostComponent],
-  imports: [
-    CommonModule,
-    RoutingModule,
-    ScrollingModule,
-    MatCardModule,
-  ],
-  providers: [FetchPostDataService]
+    declarations: [PostsComponent, OnePostComponent],
+    imports: [
+        CommonModule,
+        RoutingModule,
+        ScrollingModule,
+        MatCardModule,
+    ],
+    exports: [
+        OnePostComponent
+    ],
+    providers: [FetchPostDataService]
 
 })
 export class PostModule { }

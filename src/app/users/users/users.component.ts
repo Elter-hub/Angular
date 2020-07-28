@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {User} from '../model/user';
 import {ExchangeDataService} from '../services/exchange-data.service';
@@ -7,6 +7,7 @@ import {ExchangeDataService} from '../services/exchange-data.service';
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
 export class UsersComponent  {

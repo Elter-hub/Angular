@@ -1,6 +1,12 @@
 <div>
   <app-filter-users-form></app-filter-users-form>
 </div>
-<app-single-user *ngFor="let user of users" [singleUser]="user"></app-single-user>
+
+  <cdk-virtual-scroll-viewport class="example-viewport" itemSize="150">
+    <div class="gridContainer">
+      <app-single-user *cdkVirtualFor="let user of users" [singleUser]="user" ></app-single-user>
+    </div>
+  </cdk-virtual-scroll-viewport>
+
 
 

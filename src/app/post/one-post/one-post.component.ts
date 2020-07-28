@@ -10,7 +10,7 @@ import {animate, keyframes, query, stagger, style, transition, trigger} from '@a
     trigger('listAnimation', [
       transition('* => *', [
         query(':self', stagger('300ms', [
-          animate('0.5s ease-in', keyframes([
+          animate('0.8s ease-in', keyframes([
             style({opacity: 0, transform: 'translateY(-25%)', offset: 0}),
             style({opacity: 0.5, transform: 'translateY(10%)', offset: 0.5}),
             style({opacity: 1, transform: 'translateY(0px)', offset: 1})

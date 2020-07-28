@@ -18,29 +18,31 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRippleModule} from '@angular/material/core';
 import { FilterUsersFormComponent } from './filter-users-form/filter-users-form.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [UsersComponent, SingleUserComponent, UserFormComponent, FilterUsersFormComponent],
   exports: [
     FilterUsersFormComponent
   ],
-  imports: [
-    CommonModule,
-    UserRoutingModule,
-    RouterModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatGridListModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRippleModule
-  ]
+    imports: [
+        CommonModule,
+        UserRoutingModule,
+        RouterModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatButtonModule,
+        MatCardModule,
+        MatMenuModule,
+        MatIconModule,
+        MatGridListModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatInputModule,
+        MatSelectModule,
+        MatRippleModule,
+        ScrollingModule
+    ]
 })
 export class UserModule { }
