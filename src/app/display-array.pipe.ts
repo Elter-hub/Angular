@@ -13,18 +13,18 @@ export class DisplayArrayPipe implements PipeTransform {
 
   transform(users: User[], HowDeep?: number) {
     users.map(user => {
-      for (const value of Object.entries(user).flat()){
-        if (typeof  value === 'object' && HowDeep > 1) {
-          for (const text of Object.entries(value).flat()){
-            if (typeof text === 'object' && HowDeep > 2){
-              for (const words of Object.entries(text)) {
-                this.newString += '🥉 ' + words + '🥉';
+      for (const userKeyValue of Object.entries(user).flat()){
+        if (typeof  userKeyValue === 'object' && HowDeep > 1) {
+          for (const addressAndCompanyKV of Object.entries(userKeyValue).flat()){
+            if (typeof addressAndCompanyKV === 'object' && HowDeep > 2){
+              for (const geo of Object.entries(addressAndCompanyKV)) {
+                this.newString += '🥉 ' + geo + '🥉';
               }
             }
-            this.newString += ' ' + text + '🥈 ';
+            this.newString += ' ' + addressAndCompanyKV + '🥈 ';
           }
         }else {
-          this.newString += ' ' + value + '🥇 ';
+          this.newString += ' ' + userKeyValue + '🥇 ';
         }
       }
     });
