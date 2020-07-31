@@ -30,6 +30,4 @@ export class DisplayArrayPipe implements PipeTransform {
     });
     return this.newString;
   }
-
-
 }
